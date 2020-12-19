@@ -2,6 +2,7 @@ body {
   background-color: white;
   height: 100%;
   width: 100%;
+  margin-left: 0px;
 }
 
 .main {
@@ -21,7 +22,22 @@ body {
   font-weight: bold;
   font-family: monospace;
   margin: 2% 0% 2% 0%;
-  padding-bottom: 1%;
+  padding: 0px 0px 1% 0px;
   box-shadow: 0px 6px 10px -2px gray;
   background-color: white;
+}
+
+.shelf {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  width: 30%;
+  margin-top: 0px;
+  float: right;
+}
+
+.booklist {
+  display: flex;
+  width: 70%;
+  float: left;
 }

@@ -40,17 +40,17 @@ class App extends Component {
             <Header />
           </header>
         </section>
-        <section>
+        <section className='searchbar'>
           <SearchBar 
           filterBooksFn={this.filterBooks}
           resetFn={this.reset}/>
         </section>
-        <section>
+        <section className='booklist'>
           <BookList 
           books={this.state.books}
           addToShelfFn={this.addToShelf}/>
         </section>
-        <section>
+        <section className='shelf'>
           <Shelf 
           shelf={this.state.shelf}
           clearShelfFn={this.clearShelf}/>
