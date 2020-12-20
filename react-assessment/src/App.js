@@ -16,23 +16,24 @@ class App extends Component {
     }
   }
 
-  addToShelf () {
-
+  addToShelf = (title) => {
+    
   }
   
-  clearShelf () {
+  clearShelf = () => {
 
   }
 
-  filterBooks () {
+  filterBooks = () => {
 
   }
 
-  reset () {
+  reset = () => {
 
   }
 
   render(){
+    console.log(this.state.shelf)
     return (
       <div className='main'>
         <section className='topheader'>
