@@ -17,7 +17,8 @@ class App extends Component {
   }
 
   addToShelf = (title) => {
-    
+    // debugger;
+    this.setState({shelf: [...this.state.shelf, title]})
   }
   
   clearShelf = () => {
@@ -55,7 +56,7 @@ class App extends Component {
           <Shelf 
           shelf={this.state.shelf}
           clearShelfFn={this.clearShelf}/>
-        </section>
+        </section>       
       </div>
     )
   }
