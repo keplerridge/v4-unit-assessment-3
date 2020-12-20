@@ -12,16 +12,19 @@ class App extends Component {
     super();
     this.state = {
       books: data,
-      shelf: []
+      shelf: ['No books on your shelf!']
     }
   }
 
-  addToShelf = (title) => {
+  addToShelf = (title, index) => {
+    let newBooks = this.state.books;
+    newBooks.splice(index, 1)
     this.setState({shelf: [...this.state.shelf, title]})
   }
   
   clearShelf = () => {
     this.setState({shelf: []})
+    this.setState({books: data})
   }
 
   filterBooks = (input) => {
@@ -30,14 +33,16 @@ class App extends Component {
     for(let i = 0; i < this.state.books.length; i++){
       if(this.state.books[i]['title'].includes(input)){
         filteredBooks.push(this.state.books[i])
+        this.state.books.splice(i, 1)
       } else if (this.state.books[i]['author'].includes(input)){
         filteredBooks.push(this.state.books[i])
+        this.state.books.splice(i, 1)
       }
     }
   }
 
-  reset = (str) => {
-    
+  reset = () => {
+    this.setState({books: data, shelf: ['No books on your shelf!']})
   }
 
   render(){

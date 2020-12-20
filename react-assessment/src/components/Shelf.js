@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class Shelf extends Component {
     render () {
+        console.log(this.props)
     const mappedTitles = this.props.shelf.map(title => {
         return title;
     })
