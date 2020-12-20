@@ -9,22 +9,25 @@ class SearchBar extends Component {
         }
     }
 
-    handleChange () {
-
+    handleChange = (e) => {
+        this.setState({userInput: e.target.value})
     }
 
-    handleClick () {
-
+    handleClick = () => {
+        this.props.filterBooksFn(this.state.userInput)
     }
 
     handleClear () {
-
+        
     }
 
     render () {
+        // console.log(this.state.userInput)
         return (
             <div>
-
+                <input value={this.state.input} onChange={(e) => this.handleChange(e)} type='text'/>
+                <button onClick={this.handleClick}>Search</button>
+                <button onClick={this.handleClear}>Clear</button>
             </div>
         )
     }

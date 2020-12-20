@@ -17,24 +17,30 @@ class App extends Component {
   }
 
   addToShelf = (title) => {
-    // debugger;
     this.setState({shelf: [...this.state.shelf, title]})
   }
   
   clearShelf = () => {
-
+    this.setState({shelf: []})
   }
 
-  filterBooks = () => {
+  filterBooks = (input) => {
+    let filteredBooks = [];
 
+    for(let i = 0; i < this.state.books.length; i++){
+      if(this.state.books[i]['title'].includes(input)){
+        filteredBooks.push(this.state.books[i])
+      } else if (this.state.books[i]['author'].includes(input)){
+        filteredBooks.push(this.state.books[i])
+      }
+    }
   }
 
-  reset = () => {
-
+  reset = (str) => {
+    
   }
 
   render(){
-    console.log(this.state.shelf)
     return (
       <div className='main'>
         <section className='topheader'>
