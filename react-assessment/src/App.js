@@ -8,44 +8,43 @@ import './App.css';
 
 class App extends Component {
   
+  
+
   constructor(){
     super();
     this.state = {
-      books: data,
-      shelf: ['No books on your shelf!']
+      books: Object.assign([], data),
+      shelf: []
     }
   }
 
   addToShelf = (title, index) => {
     let newBooks = this.state.books;
-    newBooks.splice(index, 1)
-    this.setState({shelf: [...this.state.shelf, title]})
+    
+    newBooks.splice(index, 1);
+    this.setState({shelf: [...this.state.shelf, title]});
   }
   
   clearShelf = () => {
-    this.setState({shelf: []})
-    this.setState({books: data})
+    this.setState({books: Object.assign([], data), shelf: []})
+    console.log(this.state.books)
   }
 
   filterBooks = (input) => {
-    let filteredBooks = [];
-
-    for(let i = 0; i < this.state.books.length; i++){
-      if(this.state.books[i]['title'].includes(input)){
-        filteredBooks.push(this.state.books[i])
-        this.state.books.splice(i, 1)
-      } else if (this.state.books[i]['author'].includes(input)){
-        filteredBooks.push(this.state.books[i])
-        this.state.books.splice(i, 1)
-      }
-    }
+    let userInput = input.toLowerCase();
+    let filtered = this.state.books.filter(book => book['title'].toLowerCase().includes(userInput) || book['author'].toLowerCase().includes(userInput))
+    this.setState({books: filtered})
   }
 
   reset = () => {
-    this.setState({books: data, shelf: ['No books on your shelf!']})
+    let resetList = Object.assign([], data)
+    resetList = resetList.filter(book => !this.state.shelf.includes(book['title']))
+    this.setState({books: resetList})
+    console.log(this.state.books)
   }
 
   render(){
+    console.log(this.state.shelf)
     return (
       <div className='main'>
         <section className='topheader'>

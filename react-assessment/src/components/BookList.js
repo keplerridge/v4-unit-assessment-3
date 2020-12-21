@@ -11,6 +11,7 @@ class BookList extends Component {
     
     
     render () {
+        // debugger;
     const mappedBooks = this.props.books.map((book, i) => (
         <div key={i}>
             <img onClick={() => this.props.addToShelfFn(book.title, i)} src={book.img} alt='Book Cover'></img>
