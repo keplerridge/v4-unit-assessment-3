@@ -14,11 +14,15 @@ class App extends Component {
     super();
     this.state = {
       books: Object.assign([], data),
-      shelf: []
+      shelf: ['Empty shelf']
     }
   }
 
   addToShelf = (title, index) => {
+    if(this.state.shelf[0].includes('Empty shelf')){
+      this.state.shelf.splice(0, 1)
+    }
+
     let newBooks = this.state.books;
     
     newBooks.splice(index, 1);
@@ -26,7 +30,7 @@ class App extends Component {
   }
   
   clearShelf = () => {
-    this.setState({books: Object.assign([], data), shelf: []})
+    this.setState({books: Object.assign([], data), shelf: ['Empty shelf']})
     console.log(this.state.books)
   }
 
