@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import BookList from './components/BookList';
-import Shelf from './components/Shelf'
-import data from './data'
+import Shelf from './components/Shelf';
+import data from './data';
+// import './index.css';
 import './App.css';
 
 class App extends Component {

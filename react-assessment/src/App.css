@@ -1,4 +1,6 @@
-body {
+
+
+html {
   background-color: white;
   height: 100%;
   width: 100%;
@@ -39,10 +41,96 @@ body {
 .booklist {
   display: flex;
   width: 70%;
+  height: 40%;
   float: left;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 5%;
+  align-content: center;
 }
 
 img {
-  height: 60%;
-  width: 45%;
+  height: 80%;
+  width: 30%;
+}
+
+.shelf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2.5%;
+}
+
+.shelfList {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  font-size: 60%;
+}
+
+.clearShelf {
+  height: 5%;
+  width: 100%;
+}
+
+#shelfTitle {
+  display: flex;
+  left: 0px;
+}
+
+.searchBar {
+  margin-left: 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainBookList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 0;
+  width: 100%;
+  padding-top: 5%;
+}
+
+/* #author {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+}
+
+title {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+} */
+
+#list {
+  display: flex;
+  position: relative;
+  top: 0%;
+  margin-left: 62.5%;
+}
+
+#mainBookDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 125%;
+  padding-left: 5%;
+  padding: 5% 2.5% 5% 2.5%;
+  justify-content: space-between;
+  font-size: 75%;
+}
+
+#input {
+  margin: 0% 1.5% 0% 1.5%;
+}
+
+#searchButton{
+  margin: 0% 1.5% 0% 1.5%;
+}
+
+clearButton {
+  margin: 0% 1.5% 0% 21.5%;
 }

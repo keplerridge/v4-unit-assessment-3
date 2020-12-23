@@ -15,14 +15,14 @@ class BookList extends Component {
     const mappedBooks = this.props.books.map((book, i) => (
         <div key={i}>
             <img onClick={() => this.props.addToShelfFn(book.title, i)} src={book.img} alt='Book Cover'></img>
-            <div>{book.author}</div>
-            <div>{book.title}</div>
+            <div id='author'>{book.author}</div>
+            <div id='title'>{book.title}</div>
         </div>
     ))
         return (
-            <section>
-                <h2>List</h2>
-                <section>
+            <section className='mainBookList'>
+                <h2 id='list'>List</h2>
+                <section id='mainBookDisplay'>
                     {mappedBooks}
                 </section>
 

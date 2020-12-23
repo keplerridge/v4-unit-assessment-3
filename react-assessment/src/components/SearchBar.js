@@ -25,10 +25,10 @@ class SearchBar extends Component {
     render () {
         console.log(this.state.userInput)
         return (
-            <div>
-                <input value={this.state.userInput} onChange={(e) => this.handleChange(e)} type='text'/>
-                <button onClick={this.handleClick}>Search</button>
-                <button onClick={this.handleClear}>Clear</button>
+            <div className='searchBar'>
+                <input id='input' value={this.state.userInput} onChange={(e) => this.handleChange(e)} type='text'/>
+                <button id='searchButton' onClick={this.handleClick}>Search</button>
+                <button id='clearButton' onClick={this.handleClear}>Clear</button>
             </div>
         )
     }

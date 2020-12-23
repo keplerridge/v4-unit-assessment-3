@@ -2,15 +2,14 @@ import React, {Component} from 'react';
 
 class Shelf extends Component {
     render () {
-        // console.log(this.props)
     const mappedTitles = this.props.shelf.map((title, i) => {
-        return <h2 key={i}>{title}</h2>;
+        return <p className='shelfList' key={i}>{title}</p>;
     })
         return (
             <div className='shelf'>
-                <h2>shelf</h2>
-                <button onClick={this.props.clearShelfFn}>Clear Shelf</button>
-                {mappedTitles}
+                <h2 id='shelfTitle'>Your Shelf</h2>
+                <button className='clearShelf' onClick={this.props.clearShelfFn}>Clear Shelf</button>
+                <h2>{mappedTitles}</h2>
             </div>
         )
     }
